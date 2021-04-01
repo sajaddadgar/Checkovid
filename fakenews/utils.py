@@ -2,6 +2,7 @@ import re
 import string
 from datetime import datetime
 import numpy as np
+import heapq
 import textstat
 from google_trans_new import google_translator
 import operator
@@ -17,16 +18,18 @@ from .apps import FakenewsConfig
 from lexicalrichness import LexicalRichness
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import one_hot, hashing_trick, text_to_word_sequence
+from sklearn.feature_extraction.text import TfidfVectorizer
 import json
 from json import JSONEncoder
 import numpy
 # nltk.download('stopwords')
 # nltk.download('punkt')
 
+
 translator = google_translator()
 nlp = spacy.load("en_core_web_sm")
-stopwords_english = stopwords.words('english')
 embedding = FakenewsConfig.word_embedding
+stopwords_english = stopwords.words('english')
 power_word = ['improve', 'trust', 'immediately', 'discover', 'profit', 'learn', 'know', 'understand', 'powerful',
               'best', 'win', 'more', 'bonus', 'exclusive', 'extra', 'you', 'free', 'health', 'guarantee', 'new',
               'proven', 'safety', 'money', 'now', 'today', 'results', 'protect', 'help', 'easy', 'amazing', 'latest',
@@ -510,6 +513,7 @@ def get_doc_vector(document):
 
 
 def cosine_similarity(A, B):
+    np.seterr(divide='ignore', invalid='ignore')
     dot = np.dot(A, B)
     normA = np.linalg.norm(A)
     normB = np.linalg.norm(B)
@@ -532,4 +536,22 @@ def compute_similarity(target, claims):
 def get_top_5_similar(document):
     target_doc = get_doc_vector(document)
     claims = Claim.objects.all()
-    return compute_similarity(target_doc, claims)[:5]
+    all_similarity = compute_similarity(target_doc, claims)
+    return all_similarity[:5]
+
+
+def top5_similarities(text):
+    X = FakenewsConfig.similarity
+    X2 = np.append(X, [text])
+
+    tfidf = TfidfVectorizer().fit_transform(X2)
+    pairwise_similarity = tfidf * tfidf.T
+    arr = pairwise_similarity.toarray()
+    np.fill_diagonal(arr, np.nan)
+
+    input_idx = list(X2).index(text)
+    max_similarity = heapq.nlargest(5, range(len(arr[input_idx])), arr[input_idx].take)
+    top5_verdict = [Claim.objects.get(id=i+1).verdict for i in max_similarity]
+    top5_text = [X2[i] for i in max_similarity]
+
+    return list(zip(top5_text, top5_verdict))

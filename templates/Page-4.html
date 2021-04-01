@@ -90,7 +90,6 @@
             <form method="post" action="">
                 {% csrf_token %}
                 <div class="u-form-group u-form-message">
-                    <label for="message-1b15" class="u-form-control-hidden u-label">Message</label>
                     <textarea placeholder="Write your claims..." rows="4" cols="50" id="message-1b15" name="text"
                               class="u-border-2 u-border-palette-2-dark-3 u-custom-font u-grey-10 u-heading-font u-input u-input-rectangle u-radius-10 u-input-1"
                               required="required"></textarea>
@@ -106,6 +105,8 @@
         </div>
     </div>
 </section>
+
+
 
 {% if show_verdict %}
 <section
@@ -135,30 +136,30 @@
 
                 <tr style="height: 49px;">
                     <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-3">
-                        {{ top5.0.1 }}
+                        {{ top5.0.0 }}
                     </td>
-                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ top5.0.2 }}</td>
+                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ top5.0.1 }}</td>
                 </tr>
 
                 <tr style="height: 45px;">
-                    <td class="u-custom-font u-first-column u-heading-font u-table-cell">{{ top5.1.1 }}</td>
-                    <td class="u-table-cell">{{ top5.1.2 }}</td>
+                    <td class="u-custom-font u-first-column u-heading-font u-table-cell">{{ top5.1.0 }}</td>
+                    <td class="u-table-cell">{{ top5.1.1 }}</td>
                 </tr>
                 <tr style="height: 52px;">
                     <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-7">
-                        {{ top5.2.1 }}
+                        {{ top5.2.0 }}
                     </td>
-                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-8">{{ top5.2.2 }}</td>
+                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-8">{{ top5.2.1 }}</td>
                 </tr>
                 <tr style="height: 52px;">
-                    <td class="u-custom-font u-heading-font u-table-cell">{{ top5.3.1 }}</td>
-                    <td class="u-table-cell">{{ top5.3.2 }}</td>
+                    <td class="u-custom-font u-heading-font u-table-cell">{{ top5.3.0 }}</td>
+                    <td class="u-table-cell">{{ top5.3.1 }}</td>
                 </tr>
                 <tr style="height: 52px;">
                     <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-11">
-                        {{ top5.4.1 }}
+                        {{ top5.4.0 }}
                     </td>
-                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-12">{{ top5.4.2 }}</td>
+                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-12">{{ top5.4.1 }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -167,6 +168,74 @@
 </section>
 
 {% endif %}
+
+
+
+
+
+
+
+
+{#{% if show_verdict %}#}
+{#<section#}
+{#        class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-custom-color-1 u-section-2"#}
+{#        id="sec-dd74">#}
+{#    <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">#}
+{#        <div class="u-border-5 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>#}
+{#        <h1 class="u-align-center u-text u-text-body-alt-color u-text-1">Top 5 similar claims</h1>#}
+{#    </div>#}
+{#</section>#}
+{#<section class="u-align-center u-clearfix u-custom-color-1 u-section-3" id="sec-d660">#}
+{#    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">#}
+{#        <div class="u-table u-table-responsive u-table-1">#}
+{#            <table class="u-table-entity u-table-entity-1">#}
+{#                <colgroup>#}
+{#                    <col width="50%">#}
+{#                    <col width="50%">#}
+{#                </colgroup>#}
+{#                <thead class="u-align-center u-custom-font u-heading-font u-palette-2-dark-3 u-table-header u-table-header-1">#}
+{#                <tr style="height: 45px;">#}
+{#                    <th class="u-table-cell">Text</th>#}
+{#                    <th class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-2">Verdict</th>#}
+{#                </tr>#}
+{#                </thead>#}
+{##}
+{#                <tbody class="u-align-center u-custom-font u-heading-font u-table-alt-palette-1-light-3 u-table-body u-table-body-1">#}
+{##}
+{#                <tr style="height: 49px;">#}
+{#                    <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-3">#}
+{#                        {{ top5.0.1 }}#}
+{#                    </td>#}
+{#                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ top5.0.2 }}</td>#}
+{#                </tr>#}
+{##}
+{#                <tr style="height: 45px;">#}
+{#                    <td class="u-custom-font u-first-column u-heading-font u-table-cell">{{ top5.1.1 }}</td>#}
+{#                    <td class="u-table-cell">{{ top5.1.2 }}</td>#}
+{#                </tr>#}
+{#                <tr style="height: 52px;">#}
+{#                    <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-7">#}
+{#                        {{ top5.2.1 }}#}
+{#                    </td>#}
+{#                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-8">{{ top5.2.2 }}</td>#}
+{#                </tr>#}
+{#                <tr style="height: 52px;">#}
+{#                    <td class="u-custom-font u-heading-font u-table-cell">{{ top5.3.1 }}</td>#}
+{#                    <td class="u-table-cell">{{ top5.3.2 }}</td>#}
+{#                </tr>#}
+{#                <tr style="height: 52px;">#}
+{#                    <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-11">#}
+{#                        {{ top5.4.1 }}#}
+{#                    </td>#}
+{#                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-12">{{ top5.4.2 }}</td>#}
+{#                </tr>#}
+{#                </tbody>#}
+{#            </table>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#{% endif %}#}
 
 
 

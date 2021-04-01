@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'checkovid.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'checkovid2',
+        'NAME': 'checkovid',
         'USER': 'root',
         'PASSWORD': 'java123',
         'HOST': 'localhost',

@@ -6,7 +6,7 @@ from .apps import FakenewsConfig
 import os
 import pickle
 from .utils import get_all_verdict, final_verdict, get_sentence_verdict, extract_tweets_feature, netword_predict, \
-    get_vector, get_top_5_similar
+    get_vector, get_top_5_similar, top5_similarities
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -115,11 +115,11 @@ def tweet(request):
 def home(request):
     return render(request, 'homepage.html')
 
-def similarity(request):
+def similarity2(request):
     text = str(request.POST.get('text'))
 
     if (text != 'None') and (text != ''):
-        top5 = get_top_5_similar('wear a mask for protecting yourself from covid-19. keep your distance. do not wear a mask')
+        top5 = get_top_5_similar(text)
         stuff = {
             'show_verdict': True,
             'top5': top5
@@ -130,6 +130,22 @@ def similarity(request):
         }
 
 
+
+    return render(request, 'Page-4.html', stuff)
+
+
+def similarity(request):
+    text = str(request.POST.get('text'))
+    if (text != 'None') and (text != ''):
+        top5 = top5_similarities(text)
+        stuff = {
+            'show_verdict': True,
+            'top5': top5
+        }
+    else:
+        stuff = {
+            'show_verdict': False,
+        }
 
     return render(request, 'Page-4.html', stuff)
 

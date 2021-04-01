@@ -46,6 +46,9 @@ class FakenewsConfig(AppConfig):
     with open('./models/similarity/cord19_word_embeddings.pickle', 'rb') as handle:
         word_embedding = pickle.load(handle)
 
+    with open('./models/similarity/similarity.pickle', 'rb') as handle:
+        similarity = pickle.load(handle)
+
     network_base_model = load_model('models/network_base/dl/ann.h5')
 
     paragraph_base_model_dict = get_paragraph_base_models(type='paragraph_base')
