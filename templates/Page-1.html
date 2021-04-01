@@ -1,0 +1,400 @@
+{% load static %}
+<html style="font-size: 16px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Write your claim">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Paragraph base</title>
+    <link rel="stylesheet" href="{% static '/css/Page-1.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static '/css/page.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static '/js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static '/js/page.js' %}" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=heading-font">
+    <link rel="icon" href="{% static 'image/logo1.png' %}">
+</head>
+<body class="u-body">
+<header class="u-clearfix u-gradient u-header u-header" id="sec-a060">
+    <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1.125rem; font-weight: 700;">
+            <a class="u-button-style u-custom-text-active-color u-nav-link" href="#">
+                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style="">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0b31"></use>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                     id="svg-0b31" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;"
+                     xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect
+                        y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g>
+                   </svg>
+            </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+                <li class="u-nav-item"><a
+                        class="u-border-2 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-grey-90 u-text-hover-grey-90"
+                        href="{% url 'fakenews:home' %}" style="padding: 10px 0px;">Home</a>
+                </li>
+            </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                <div class="u-sidenav-overflow">
+                    <div class="u-menu-close"></div>
+                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'fakenews:home' %}"
+                                                  style="padding: 10px 0px;">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+    </nav>
+    <a href="{% url 'fakenews:home' %}" class="u-image u-logo u-image-1">
+        <img src="{% static '/image/logo1.png' %}" class="u-logo-image u-logo-image-1" data-image-width="80">
+    </a>
+    <div class="u-align-left u-expanded-width u-line u-line-horizontal u-line-1"></div>
+</header>
+<section class="u-align-center u-clearfix u-custom-color-1 u-section-1" id="sec-b580">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <div alt="" class="u-align-left u-image u-image-circle u-image-1" src="" data-animation-name="rollIn"
+             data-animation-duration="1000" data-animation-delay="0" data-animation-direction=""></div>
+        <h1 class="u-heading-font u-text u-title u-text-1">Write your claim</h1>
+        <p class="u-large-text u-text u-text-variant u-text-2">All the data that we use in this project are about
+            Coronavirus and Covid-19. Therefore, your claims must be about this subject to give the best result.</p>
+        <div class="u-form u-form-1" style="margin-top: 75px">
+
+
+            <form method="post" action="">
+                {% csrf_token %}
+                <textarea placeholder="Write here..." rows="4" cols="50" id="text_1" name="text"
+                          class="u-border-2 u-border-palette-2-dark-3 u-custom-font u-grey-10 u-heading-font u-input u-input-rectangle u-radius-10 u-input-1"
+                          required="required"></textarea>
+
+
+                <button id="submit_button" type="submit"
+                        class="u-border-2 u-border-palette-2-dark-2 u-btn u-btn-submit u-button-style u-palette-2-dark-3 u-text-hover-white u-text-palette-2-light-1 u-btn-1">
+                    Submit
+                </button>
+            </form>
+
+        </div>
+        {% if show_verdict %}
+
+            <div class="u-border-5 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+
+
+            <span class="u-gradient u-icon u-icon-circle u-text-palette-2-dark-3 u-icon-1"><svg class="u-svg-link"
+                                                                                                preserveAspectRatio="xMidYMin slice"
+                                                                                                viewBox="0 0 512 512"
+                                                                                                style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-360c"></use></svg><svg
+                    class="u-svg-content"
+                    id="svg-360c"
+                    style="color: rgb(191, 121, 92);"><g><rect
+                    x="164.284" y="146.393" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 469.2532 247.0125)"
+                    style="fill:#FAD06A;" width="38.37" height="148.599"></rect><rect x="308.867" y="1.806"
+                                                                                      transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 613.8336 -102.0473)"
+                                                                                      style="fill:#FAD06A;"
+                                                                                      width="38.37"
+                                                                                      height="148.599"></rect>
+</g><g><rect x="172.713" y="82.266" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 541.5521 72.4933)"
+             style="fill:#DC9E5E;" width="166.098" height="132.279"></rect><polygon style="fill:#DC9E5E;"
+                                                                                    points="322.817,174.883 282.25,215.45 425.267,372.353 479.72,317.9  "></polygon>
+</g><path d="M486.456,310.509l-149.163-135.96l24.089-24.089c1.697,1.164,3.669,1.753,5.646,1.753c2.56,0,5.118-0.977,7.071-2.929  l27.134-27.134c3.905-3.905,3.905-10.237,0-14.143L296.154,2.928c-3.906-3.904-10.236-3.904-14.143,0l-27.134,27.134  c-3.46,3.46-3.848,8.823-1.176,12.717L150.146,146.335c-3.895-2.671-9.256-2.284-12.717,1.176l-27.134,27.134  c-3.905,3.905-3.905,10.237,0,14.143l105.079,105.08c1.876,1.875,4.419,2.929,7.071,2.929s5.196-1.054,7.071-2.929l27.134-27.135  c3.46-3.46,3.848-8.823,1.176-12.717l24.089-24.088L417.877,379.09c1.841,2.019,4.428,3.198,7.159,3.261  c0.077,0.002,0.154,0.003,0.231,0.003c2.649,0,5.193-1.052,7.071-2.929l54.452-54.452c1.932-1.933,2.989-4.571,2.926-7.303  C489.654,314.937,488.475,312.35,486.456,310.509z M289.083,24.142l90.937,90.937l-12.991,12.991l-90.936-90.937L289.083,24.142z   M267.72,57.046l79.396,79.396L243.808,239.748l-79.396-79.396L267.72,57.046z M222.445,272.653l-90.937-90.938l12.991-12.991  l90.937,90.937L222.445,272.653z M425.602,357.875L296.072,215.77l27.064-27.063l142.106,129.529L425.602,357.875z"></path><path
+                    style="fill:#2C4D77;"
+                    d="M375.847,442.723v-23.078c0-16.369-13.269-29.638-29.638-29.638H99.638  c-16.369,0-29.638,13.27-29.638,29.638v23.078h-8.079c-16.369,0-29.638,13.269-29.638,29.638l0,0  c0,16.369,13.27,29.638,29.638,29.638h322.005c16.369,0,29.638-13.27,29.638-29.638l0,0c0-16.369-13.27-29.638-29.638-29.638  H375.847z"></path><path
+                    d="M324.671,457.95c-0.65,0-1.311-0.061-1.96-0.19c-0.63-0.13-1.26-0.32-1.87-0.57c-0.6-0.25-1.18-0.56-1.72-0.92  c-0.551-0.37-1.061-0.79-1.521-1.25s-0.88-0.97-1.25-1.52c-0.359-0.54-0.67-1.12-0.92-1.721c-0.25-0.609-0.44-1.239-0.57-1.869  c-0.13-0.65-0.189-1.301-0.189-1.96c0-2.631,1.06-5.21,2.93-7.07c0.46-0.46,0.97-0.88,1.521-1.24c0.54-0.36,1.12-0.67,1.72-0.92  c0.61-0.25,1.24-0.44,1.87-0.57c1.29-0.26,2.62-0.26,3.91,0c0.64,0.13,1.27,0.32,1.87,0.57c0.609,0.25,1.19,0.56,1.73,0.92  c0.55,0.36,1.061,0.78,1.52,1.24c0.46,0.46,0.88,0.97,1.239,1.52c0.36,0.54,0.67,1.12,0.92,1.73c0.25,0.6,0.44,1.229,0.57,1.87  c0.13,0.649,0.2,1.3,0.2,1.95c0,0.659-0.07,1.31-0.2,1.96c-0.13,0.63-0.32,1.26-0.57,1.869c-0.25,0.601-0.56,1.181-0.92,1.721  c-0.359,0.55-0.779,1.06-1.239,1.52c-0.46,0.46-0.971,0.88-1.52,1.25c-0.54,0.36-1.12,0.67-1.73,0.92  c-0.601,0.25-1.23,0.44-1.87,0.57C325.98,457.889,325.32,457.95,324.671,457.95z"></path><path
+                    d="M385.847,432.769v-13.124c0-21.856-17.781-39.638-39.638-39.638H99.638C77.782,380.007,60,397.788,60,419.645v13.124  c-20.968,1.006-37.718,18.38-37.718,39.592c0,21.856,17.782,39.639,39.639,39.639h322.005c21.857,0,39.639-17.782,39.639-39.639  C423.564,451.149,406.814,433.775,385.847,432.769z M383.926,492H61.921c-10.829,0-19.639-8.81-19.639-19.639  c0-10.828,8.809-19.638,19.639-19.638H70c0.033,0,0.065-0.005,0.098-0.005c0.013,0,0.026,0.002,0.04,0.002h215.43  c5.523,0,10-4.477,10-10c0-5.522-4.477-10-10-10H80v-13.075c0-10.828,8.81-19.638,19.638-19.638h246.571  c10.828,0,19.638,8.81,19.638,19.638v23.078c0,5.523,4.478,10,10,10h8.079c10.829,0,19.639,8.81,19.639,19.638  C403.564,483.19,394.755,492,383.926,492z"></path><path
+                    d="M222.923,347.188c-5.523,0-10-4.478-10-10v-19.416c0-5.523,4.477-10,10-10c5.522,0,10,4.477,10,10v19.416  C232.923,342.71,228.445,347.188,222.923,347.188z"></path><path
+                    d="M159.334,361.416c-2.56,0-5.118-0.977-7.071-2.929l-17.872-17.871c-3.905-3.905-3.905-10.237,0-14.143  c3.904-3.904,10.236-3.904,14.143,0l17.872,17.871c3.905,3.905,3.905,10.237,0,14.143  C164.453,360.439,161.893,361.416,159.334,361.416z"></path><path
+                    d="M286.513,361.416c-2.56,0-5.118-0.977-7.071-2.929c-3.905-3.905-3.905-10.237,0-14.143l17.871-17.871  c3.906-3.904,10.236-3.904,14.143,0c3.905,3.905,3.905,10.237,0,14.143l-17.871,17.871  C291.631,360.439,289.072,361.416,286.513,361.416z"></path></svg></span>
+            </div>
+        {% endif %}
+</section>
+{% if show_verdict %}
+
+    <section class="u-align-center u-clearfix u-custom-color-1 u-section-2" id="sec-0ab6">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-table u-table-responsive u-table-1">
+                <table class="u-table-entity u-table-entity-1">
+                    <colgroup>
+                        <col width="33.5%">
+                        <col width="33%">
+                        <col width="33.5%">
+                    </colgroup>
+                    <thead class="u-align-center u-custom-font u-heading-font u-palette-2-dark-3 u-table-header u-table-header-1">
+                    <tr style="height: 45px;">
+                        <th class="u-table-cell">Model</th>
+                        <th class="u-table-cell">Accuracy</th>
+                        <th class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-3">
+                            Verdict
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="u-align-center u-custom-font u-heading-font u-table-alt-palette-1-light-3 u-table-body u-table-body-1">
+                    <tr style="height: 45px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-4">
+                            Naive Bayes
+                        </td>
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-5">91.87%
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-6">
+                            {% if naive_bayes_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif naive_bayes_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 49px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-7">
+                            Logistic Regression
+                        </td>
+                        <td class="u-custom-font u-heading-font u-table-cell">93.03%</td>
+                        <td class="u-table-cell">
+                            {% if logistic_regression_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif logistic_regression_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 65px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-10">
+                            SVM
+                        </td>
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-11">
+                            92.14%
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-12">
+                            {% if svm_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif svm_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 45px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-13">
+                            Decision Tree
+                        </td>
+                        <td class="u-custom-font u-heading-font u-table-cell">85.46%</td>
+                        <td class="u-table-cell">
+                            {% if decision_tree_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif decision_tree_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-16">Random
+                            Forest
+                        </td>
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-17">
+                            92.15%
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-18">
+                            {% if random_forest_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif random_forest_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-19">
+                            Stacking
+                        </td>
+                        <td class="u-custom-font u-heading-font u-table-cell u-table-cell-20">94.06%</td>
+                        <td class="u-table-cell">
+                            {% if stacking_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif stacking_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-22">
+                            LSTM
+                        </td>
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-23">
+                            94.21%
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-24">
+                            {% if lstm_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif lstm_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-25">
+                            Bidirectional LSTM
+                        </td>
+                        <td class="u-custom-font u-heading-font u-table-cell">93.08%</td>
+                        <td class="u-table-cell">
+                            {% if bidirectional_lstm_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif bidirectional_lstm_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-28">
+                            CNN
+                        </td>
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-29">94.2%
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-30">
+                            {% if cnn_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif cnn_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-31">
+                            CNN + LSTM
+                        </td>
+                        <td class="u-custom-font u-heading-font u-table-cell">92.99%</td>
+                        <td class="u-table-cell">
+                            {% if cnn_lstm_label == 'fake' %}
+                                <img width="50" height="50" src="{% static 'image/fake.png' %}">
+                            {% elif cnn_lstm_label == 'real' %}
+                                <img width="50" height="50" src="{% static 'image/real.png' %}">
+                            {% endif %}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="u-align-left u-clearfix u-gradient u-valign-middle-md u-section-3" id="sec-917f">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-container-style u-grey-5 u-group u-opacity u-opacity-90 u-radius-50 u-shape-round u-group-1">
+                <div class="u-container-layout u-container-layout-1">
+                    {% if image_form == 'fake' %}
+                        <img src="{% static 'image/istockphoto-1215063494-612x612.png' %}" alt=""
+                             class="u-image u-image-default u-image-1" data-image-width="342" data-image-height="221">
+                    {% endif %}
+                    {% if image_form == 'real' %}
+                        <br><br><br>
+                    {% endif %}
+                    <p class="u-align-center u-custom-font u-heading-font u-text u-text-1">{{ text }}</p>
+                    {% if image_form == 'fake' %}
+                        <img src="{% static 'image/istockphoto-1213609022-612x6121.png' %}" alt=""
+                             class="u-image u-image-default u-image-2" data-image-width="192" data-image-height="267">
+                    {% endif %}
+                    {% if image_form == 'real' %}
+                        <br><br><br><br><br><br><br>
+                    {% endif %}
+                    <h3 class="u-align-center u-text u-text-2" style="text-align: center;"><b>Score: </b>
+                        <p id="verdict_color">{{ verdict_percent }}%</p></h3>
+
+                </div>
+
+            </div>
+    </section>
+
+
+{% endif %}
+
+
+
+<footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-custom-color-3 u-footer u-footer" style="background-color: #56727d"
+        id="sec-4f1f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <a href="{% url 'fakenews:home' %}" class="u-image u-logo u-image-1">
+            <img src="{% static '/image/logo1.png' %}" class="u-logo-image u-logo-image-1" data-image-width="80">
+        </a>
+        <div class="u-align-left u-social-icons u-spacing-10 u-social-icons-1">
+            <a class="u-social-url" target="_blank" title="Github" href="https://github.com/sajaddadgar"><span
+                    class="u-icon u-icon-circle u-social-github u-social-icon u-text-black u-icon-1"><svg
+                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-32ab"></use></svg><svg
+                    class="u-svg-content" id="svg-32ab" style=""><circle fill="currentColor" cx="56.1" cy="56.1"
+                                                                         r="55"></circle><path fill="#FFFFFF" d="M88,51.3c0-5.5-1.9-10.2-5.3-13.7c0.6-1.3,2.3-6.5-0.5-13.5c0,0-4.2-1.4-14,5.3c-4.1-1.1-8.4-1.7-12.7-1.8
+	c-4.3,0-8.7,0.6-12.7,1.8c-9.7-6.6-14-5.3-14-5.3c-2.8,7-1,12.2-0.5,13.5C25,41.2,23,45.7,23,51.3c0,19.6,11.9,23.9,23.3,25.2
+	c-1.5,1.3-2.8,3.5-3.2,6.8c-3,1.3-10.2,3.6-14.9-4.3c0,0-2.7-4.9-7.8-5.3c0,0-5-0.1-0.4,3.1c0,0,3.3,1.6,5.6,7.5c0,0,3,9.1,17.2,6
+	c0,4.3,0.1,8.3,0.1,9.5h25.2c0-1.7,0.1-7.2,0.1-14c0-4.7-1.7-7.9-3.4-9.4C76,75.2,88,70.9,88,51.3z"></path></svg></span>
+            </a>
+            <a class="u-social-url" target="_blank" title="Google Plus" href="mailto:sajad.dadgar98@gmail.com"><span
+                    class="plus u-icon u-icon-circle u-social-google u-social-icon u-text-black u-icon-2"><svg
+                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4025"></use></svg><svg
+                    class="u-svg-content" id="svg-4025" style=""><circle fill="currentColor" cx="56.1" cy="56.1"
+                                                                         r="55"></circle><path fill="#FFFFFF" d="M60.8,76.3c-6.6,8.6-19,11.1-29,7.7c-10.6-3.5-18.4-14.2-18.2-25.5C13,44.6,25.3,31.8,39.1,31.6
+	c7.1-0.6,14,2.1,19.3,6.6c-2.2,2.4-4.4,4.8-6.9,7.1c-4.8-2.9-10.4-5-15.9-3.1c-8.8,2.6-14.3,13-10.9,21.8
+	c2.7,9.1,13.7,14.1,22.5,10.2c4.5-1.6,7.5-5.7,8.7-10.2c-5.1-0.1-10.2,0-15.5-0.2c0-3,0-6.1,0-9.2c8.6,0,17.1,0,25.7,0
+	C66.7,62.3,65.5,70.4,60.8,76.3z M98.3,62.5c-2.6,0-5.1,0-7.7,0c0,2.6,0,5.1,0,7.7c-2.6,0-5.1,0-7.7,0c0-2.6,0-5.1,0-7.7
+	c-2.6,0-5.1,0-7.7,0c0-2.6,0-5.1,0-7.7c2.6,0,5.1,0,7.7,0c0-2.6,0-5.1,0.1-7.7c2.6,0,5.1,0,7.7,0c0,2.6,0,5.1,0,7.7
+	c2.6,0,5.1,0,7.7,0C98.3,57.3,98.3,59.9,98.3,62.5z"></path></svg></span>
+            </a>
+            <a class="u-social-url" target="_blank" title="LinkedIn"
+               href="https://www.linkedin.com/in/sajaddadgar/"><span
+                    class="u-icon u-icon-circle u-social-icon u-social-linkedin u-text-black u-icon-3"><svg
+                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ffb9"></use></svg><svg
+                    class="u-svg-content" id="svg-ffb9" style=""><circle fill="currentColor" cx="56.1" cy="56.1"
+                                                                         r="55"></circle><path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
+            C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
+            H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path></svg></span>
+            </a>
+        </div>
+    </div>
+</footer>
+<span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px"
+      class="u-back-to-top u-grey-90 u-icon u-icon-circle u-opacity u-opacity-85 u-spacing-15" data-href="#"><svg
+        class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13" style=""><use
+        xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e1ca"></use></svg><svg
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve"
+        class="u-svg-content" viewBox="0 0 551.13 551.13" id="svg-e1ca"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
+
+
+        </span>
+</body>
+
+<script>
+
+    var percentColors = [
+        {pct: 0.0, color: {r: 0xff, g: 0x00, b: 0}},
+        {pct: 0.5, color: {r: 0xff, g: 0xff, b: 0}},
+        {pct: 1.0, color: {r: 0x00, g: 0xff, b: 0}}];
+
+    var getColorForPercentage = function (pct) {
+        for (var i = 1; i < percentColors.length - 1; i++) {
+            if (pct < percentColors[i].pct) {
+                break;
+            }
+        }
+        var lower = percentColors[i - 1];
+        var upper = percentColors[i];
+        var range = upper.pct - lower.pct;
+        var rangePct = (pct - lower.pct) / range;
+        var pctLower = 1 - rangePct;
+        var pctUpper = rangePct;
+        var color = {
+            r: Math.floor(lower.color.r * pctLower + upper.color.r * pctUpper),
+            g: Math.floor(lower.color.g * pctLower + upper.color.g * pctUpper),
+            b: Math.floor(lower.color.b * pctLower + upper.color.b * pctUpper)
+        };
+        return 'rgb(' + [color.r, color.g, color.b].join(',') + ')';
+        // or output as hex if preferred
+    };
+    var verdict = {{ verdict_percent }} / 100;
+    document.getElementById("verdict_color").style.backgroundColor = getColorForPercentage(verdict)
+
+</script>
+
+</html>

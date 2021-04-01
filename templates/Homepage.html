@@ -1,0 +1,393 @@
+{% load static %}
+<html style="font-size: 16px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static '/css/page.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static '/css/Homepage.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static '/js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static '/js/page.js' %}" defer=""></script>
+    {#    <link id="u-theme-google-font" rel="stylesheet">#}
+    <link id="u-theme-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Oswald:200,300,400,500,600,700">
+    <link rel="icon" href="{% static 'image/logo1.png' %}">
+</head>
+<body class="u-body">
+
+<header class="u-clearfix u-gradient u-header u-header" id="sec-a060">
+    <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1.125rem; font-weight: 700;">
+            <a class="u-button-style u-custom-text-active-color u-nav-link" href="#">
+                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style="">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0b31"></use>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                     id="svg-0b31" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;"
+                     xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect
+                        y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                    <g></g></svg>
+            </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+                <li class="u-nav-item"><a
+                        class="u-border-2 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-grey-90 u-text-hover-grey-90"
+                        href="{% url 'fakenews:home' %}" style="padding: 10px 0px;">Home</a>
+                </li>
+
+                <li class="u-nav-item"><a
+                        class="u-border-2 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-grey-90 u-text-hover-grey-90"
+                        href="#sec-00f0" style="padding: 10px 0px;">Data</a>
+                </li>
+                <li class="u-nav-item"><a
+                        class="u-border-2 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-grey-90 u-text-hover-grey-90"
+                        style="padding: 10px 0px;" href="#carousel_d8f9">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                <div class="u-sidenav-overflow">
+                    <div class="u-menu-close"></div>
+                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'fakenews:home' %}"
+                                                  style="padding: 10px 0px;">Home</a>
+                        </li>
+
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#sec-00f0"
+                                                  style="padding: 10px 0px;">Data</a>
+                        </li>
+                        <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 0px;"
+                                                  href="#carousel_d8f9">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+    </nav>
+    <a href="{% url 'fakenews:home' %}" class="u-image u-logo u-image-1">
+        <img src="{% static '/image/logo1.png' %}" class="u-logo-image u-logo-image-1" data-image-width="80">
+    </a>
+    <div class="u-align-left u-expanded-width u-line u-line-horizontal u-line-1"></div>
+</header>
+
+
+<section class="u-clearfix u-image u-valign-middle u-section-1" id="carousel_1acf" data-image-width="1980"
+         data-image-height="1232">
+    <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+            <div class="u-layout-row">
+                <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-26 u-layout-cell-1">
+                    <div class="u-container-layout u-container-layout-1">
+                        <h1 class="u-text u-text-1">CHECKOVID</h1>
+                        <div class="u-palette-2-base u-shape u-shape-rectangle u-shape-1"
+                             data-animation-name="lightSpeedIn" data-animation-duration="1000" data-animation-delay="0"
+                             data-animation-direction=""></div>
+                        <p class="u-text u-text-2">Covid-19 fact checking website</p>
+                        <a class="u-active-palette-2-dark-2 u-border-2 u-border-grey-dark-1 u-btn u-button-style u-custom-font u-font-oswald u-grey-80 u-hover-palette-2-dark-2 u-text-active-black u-text-palette-2-light-1 u-btn-1"
+                           href="#carousel_d8f9">ABOUT</a>
+                    </div>
+                </div>
+                <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-34 u-layout-cell-2">
+                    <div class="u-container-layout u-container-layout-2">
+                        <img class="u-image u-image-1" src="{% static '/image/FakeNews1.jpg' %}" data-image-width="760"
+                             data-image-height="573">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="u-align-center u-clearfix u-grey-5 u-section-2" id="sec-1844">
+    <div class="u-expanded-width u-gradient u-shape u-shape-rectangle u-shape-1"></div>
+
+
+    <div class="u-list u-repeater u-list-1">
+        <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-gradient u-icon u-icon-circle u-spacing-18 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.999 511.999" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-0e86"></use></svg><svg class="u-svg-content" viewBox="0 0 511.999 511.999" x="0px" y="0px" id="svg-0e86" style="enable-background:new 0 0 511.999 511.999;"><g><g><path d="M117.776,174.345c-3.9-3.9-10.24-3.9-14.139,0c-3.91,3.91-3.91,10.24,0,14.14c3.9,3.91,10.24,3.91,14.139,0    C121.685,184.585,121.685,178.255,117.776,174.345z"></path>
+</g>
+</g><g><g><path d="M253.199,447.718c4.409-5.972,6.792-13.167,6.792-20.732c0-19.298-15.7-34.999-34.999-34.999H54.998    c-9.353,0-18.142,3.64-24.749,10.249c-6.61,6.608-10.25,15.397-10.25,24.75c0,7.749,2.536,14.915,6.815,20.72    C10.891,456.078,0,472.778,0,491.983v10c0,5.523,4.478,10,10,10h259.99c5.522,0,10-4.477,10-10v-10    C279.99,472.787,269.11,456.094,253.199,447.718z M44.39,416.376c2.831-2.832,6.599-4.391,10.608-4.391h169.994    c8.271,0,14.999,6.729,14.999,14.999c0,4.01-1.56,7.777-4.392,10.609c-2.831,2.832-6.599,4.391-10.608,4.391H54.998    c-8.271,0-14.999-6.729-14.999-14.999C39.999,422.976,41.558,419.208,44.39,416.376z M19.999,491.983    c0-16.541,13.458-29.999,29.999-29.999h5h169.994h5c16.541,0,29.999,13.458,29.999,29.999H19.999z"></path>
+</g>
+</g><g><g><path d="M502.693,420.124c-3.396-5.263-7.448-9.917-12.045-13.833l-46.725-40.753c-0.364-0.548-0.786-1.068-1.269-1.551    c-0.812-0.811-1.732-1.444-2.71-1.918l-28.257-24.645l-130.79-114.091c5.354-5.597,8.302-12.916,8.302-20.699    c0-8.018-3.121-15.553-8.794-21.225c-2.474-2.471-5.286-4.414-8.291-5.837l12.1-12.1c3.382,0.899,6.857,1.359,10.335,1.359    c10.241-0.001,20.483-3.899,28.279-11.695c7.558-7.557,11.72-17.602,11.72-28.285s-4.162-20.728-11.719-28.285L237.981,11.72    c-7.557-7.557-17.603-11.719-28.289-11.719c-10.681,0-20.724,4.162-28.28,11.719c-10.444,10.444-13.882,25.273-10.336,38.615    L50.351,171.059c-3.336-0.887-6.807-1.355-10.353-1.355c-10.688,0-20.729,4.159-28.28,11.709    c-15.596,15.596-15.596,40.973,0,56.57l84.847,84.848c7.799,7.798,18.042,11.697,28.285,11.697    c10.244,0,20.487-3.899,28.286-11.697c10.444-10.445,13.882-25.273,10.336-38.615l12.075-12.076    c1.451,3.03,3.42,5.826,5.866,8.271c5.666,5.666,13.199,8.787,21.215,8.787c7.775,0,15.091-2.943,20.696-8.291L362.63,440.961    c0.384,0.6,0.832,1.171,1.356,1.695c0.179,0.179,0.369,0.342,0.558,0.504l41.511,47.694c1.032,1.218,2.135,2.416,3.28,3.561    c11.401,11.397,26.46,17.582,42.27,17.582c2.787,0,5.6-0.192,8.417-0.582c18.829-2.606,35.102-13.87,44.644-30.908    C515.119,461.834,514.341,438.127,502.693,420.124z M195.555,25.862c3.779-3.779,8.801-5.861,14.138-5.861    c5.344,0,10.369,2.082,14.147,5.861l84.848,84.847c3.779,3.779,5.86,8.802,5.86,14.143c0,5.341-2.081,10.364-5.861,14.143    c-7.795,7.797-20.481,7.797-28.276,0L195.56,54.144c-0.002-0.002-0.003-0.003-0.005-0.005    C187.758,46.343,187.758,33.658,195.555,25.862z M138.994,308.689c-7.798,7.798-20.489,7.799-28.287,0L25.86,223.842    c-7.799-7.799-7.799-20.487,0-28.287c3.772-3.773,8.794-5.851,14.138-5.851c5.343,0,10.362,2.077,14.133,5.847l84.862,84.862    C146.791,288.208,146.791,300.894,138.994,308.689z M181.096,238.309l-27.961,27.962l-84.856-84.856L181.412,68.28l84.855,84.856    l-28.012,28.013c-0.091,0.086-0.18,0.17-0.276,0.265l-56.538,56.539C181.324,238.068,181.211,238.188,181.096,238.309z     M216.802,259.17c-0.02,0.02-0.039,0.039-0.059,0.059l-7.042,7.042c-1.889,1.888-4.4,2.928-7.074,2.928    c-2.673,0-5.185-1.04-7.073-2.929c-1.891-1.89-2.932-4.404-2.932-7.079c0-2.618,0.999-5.081,2.812-6.939l56.801-56.801    c3.893-3.786,10.187-3.739,14.034,0.104c1.89,1.89,2.931,4.404,2.931,7.079c0,2.673-1.038,5.18-2.932,7.069l-7.001,7.001    c-0.048,0.047-0.096,0.095-0.143,0.143L216.802,259.17z M237.51,266.745l29.226-29.226l123.742,107.935l-45.154,45.155    L237.51,266.745z M358.485,405.731l47.099-47.1l15.107,13.177l-49.045,49.046L358.485,405.731z M487.217,470.737    c-6.454,11.523-17.365,19.128-29.936,20.868c-12.542,1.736-24.865-2.395-33.807-11.333c-0.769-0.768-1.505-1.569-2.191-2.381    c-0.032-0.038-0.064-0.076-0.097-0.113l-36.38-41.802l50.991-50.992l41.75,36.417c0.031,0.028,0.063,0.055,0.096,0.083    c3.125,2.657,5.898,5.848,8.251,9.494C493.456,442.663,493.986,458.643,487.217,470.737z"></path>
+</g>
+</g><g><g><path d="M188.484,103.636c-3.906-3.905-10.236-3.905-14.142,0l-42.428,42.428c-3.905,3.905-3.905,10.237,0,14.141    c1.953,1.953,4.512,2.929,7.071,2.929c2.559,0,5.118-0.977,7.071-2.929l42.428-42.428    C192.389,113.873,192.389,107.542,188.484,103.636z"></path>
+</g>
+</g></svg></span>
+            <h4 class="u-custom-font u-text u-text-1">Check your paragraph</h4>
+            <p class="u-text u-text-2">In this section, you can write your claim and get its verdict with our artificial intelligence&nbsp;models.</p>
+            <a href="{% url 'fakenews:claim' %}" class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-text-black u-text-hover-white u-btn-1">CLICK</a>
+          </div>
+        </div>
+
+
+        <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2"><span
+                    class="u-gradient u-icon u-icon-circle u-spacing-18 u-icon-2"><svg class="u-svg-link"
+                                                                                       preserveAspectRatio="xMidYMin slice"
+                                                                                       viewBox="0 0 512.001 512.001"
+                                                                                       style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2663"></use></svg><svg
+                    class="u-svg-content" viewBox="0 0 512.001 512.001" x="0px" y="0px" id="svg-2663"
+                    style="enable-background:new 0 0 512.001 512.001;"><g><g><g><path
+                    d="M142.701,163.305l0.463,0.213c1.35,0.618,2.765,0.911,4.159,0.911c3.79,0,7.416-2.166,9.099-5.837     c2.3-5.021,0.095-10.956-4.926-13.257l-0.414-0.189c-5.015-2.316-10.956-0.126-13.27,4.889     C135.497,155.049,137.686,160.991,142.701,163.305z"></path><path
+                    d="M509.648,97.008c-2.867-3.402-7.635-4.502-11.702-2.698c-6.087,2.699-12.282,5.075-18.566,7.121     c8.145-10.321,14.476-22.094,18.604-34.83c1.283-3.957-0.018-8.295-3.266-10.893s-7.767-2.913-11.344-0.794     c-17.466,10.349-36.24,17.8-55.881,22.186c-20.516-19.716-48.208-30.923-76.848-30.923c-61.146,0-110.891,49.745-110.891,110.891     c0,4.013,0.219,8.053,0.653,12.093c-15.721-1.497-31.284-4.323-46.416-8.434c-5.329-1.448-10.824,1.699-12.272,7.029     c-1.448,5.33,1.699,10.824,7.029,12.272c20.492,5.567,41.714,8.936,63.077,10.012c3.131,0.158,6.135-1.153,8.149-3.542     c2.014-2.389,2.796-5.581,2.113-8.63c-1.548-6.913-2.333-13.912-2.333-20.8c0-50.118,40.774-90.891,90.891-90.891     c25.045,0,49.198,10.447,66.266,28.662c2.351,2.51,5.827,3.637,9.205,2.979c13.73-2.668,27.098-6.678,39.982-11.982     c-7.222,10.025-16.446,18.554-27.193,24.987c-4.048,2.423-5.852,7.345-4.329,11.809c1.523,4.464,5.957,7.258,10.643,6.702     c9.236-1.096,18.385-2.806,27.396-5.117c-8.196,8.576-17.188,16.393-26.917,23.389c-2.68,1.928-4.237,5.054-4.159,8.354     l0.304,12.951c-0.063,136.137-103.69,276.911-277.068,276.911c-39.621,0-78.442-8.424-114.149-24.594     c42.034-3.177,81.48-18.427,114.929-44.583c3.331-2.605,4.664-7.023,3.328-11.036c-1.336-4.012-5.051-6.751-9.279-6.839     c-33.474-0.699-63.422-19.583-78.721-48.384c1.091,0.03,2.19,0.045,3.295,0.045c9.92,0,19.717-1.263,29.119-3.754     c4.492-1.19,7.572-5.316,7.435-9.961s-3.455-8.583-8.009-9.506c-37.301-7.56-65.57-37.735-71.666-74.423     c11.025,4.03,22.452,6.213,34.142,6.512c4.453,0.106,8.445-2.732,9.79-6.98c1.343-4.248-0.285-8.872-3.993-11.341     c-25.318-16.855-40.433-45.109-40.433-75.579c0-11.269,2.066-22.359,6.042-32.692c16.303,18.001,34.709,33.926,54.879,47.465     c4.586,3.079,10.798,1.856,13.876-2.729c3.079-4.585,1.856-10.798-2.729-13.876C89.812,108.25,69.412,89.658,51.996,68.308     c-2.07-2.538-5.255-3.897-8.517-3.65c-3.265,0.252-6.2,2.086-7.857,4.911C25.771,86.364,20.564,105.67,20.564,125.4     c0,24.38,7.932,47.596,22.108,66.494c-2.698-1.179-5.368-2.496-8.003-3.951c-3.098-1.71-6.869-1.656-9.917,0.142     c-3.047,1.799-4.917,5.073-4.917,8.612v1.23c0,36.997,18.463,70.606,47.32,90.945c-0.06-0.011-0.12-0.022-0.18-0.034     c-3.465-0.653-7.021,0.565-9.356,3.21c-2.334,2.646-3.102,6.325-2.02,9.683c11.733,36.423,41.158,63.627,77.042,73.258     c-29.687,17.642-63.339,26.864-98.619,26.864c-7.657,0-15.152-0.42-22.915-1.283c-4.614-0.513-8.981,2.221-10.532,6.6     c-1.552,4.38,0.118,9.251,4.03,11.758c47.869,30.679,103.255,46.895,160.171,46.895c45.777,0,88.621-9.094,127.34-27.034     c35.518-16.452,66.902-39.966,93.28-69.887c48.583-55.109,76.447-128.047,76.447-200.111c0-0.078-0.001-0.157-0.003-0.235     l-0.185-7.874c19.047-14.42,35.402-31.787,48.666-51.684C512.789,105.297,512.514,100.41,509.648,97.008z"></path>
+</g>
+</g>
+</g><g><g><path d="M376.697,289.023c-4.735-2.841-10.879-1.306-13.72,3.43l-0.018,0.029c-2.842,4.736-1.298,10.864,3.438,13.705    c1.607,0.965,3.376,1.423,5.125,1.423c3.404,0,6.727-1.739,8.605-4.867C382.968,298.007,381.433,291.864,376.697,289.023z"></path>
+</g>
+</g><g><g><path d="M357.183,319.116c-4.261-3.512-10.564-2.906-14.077,1.356c-17.505,21.238-38.201,38.762-61.512,52.085    c-4.795,2.741-6.46,8.849-3.72,13.644c1.846,3.23,5.219,5.04,8.691,5.04c1.682,0,3.388-0.425,4.953-1.319    c25.42-14.529,47.969-33.615,67.021-56.729C362.052,328.931,361.445,322.629,357.183,319.116z"></path>
+</g>
+</g></svg></span>
+                <h4 class="u-custom-font u-text u-text-3">Check your tweet<br>
+                </h4>
+                <p class="u-text u-text-4">In this section, you can give a tweet link and get its verdict with
+                    difference approaches.</p>
+                <a href="{% url 'fakenews:tweet' %}"
+                   class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-text-black u-text-hover-white u-btn-2">CLICK</a>
+            </div>
+        </div>
+
+
+        <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3"><span
+                    class="u-gradient u-icon u-icon-circle u-spacing-18 u-icon-3"><svg class="u-svg-link"
+                                                                                       preserveAspectRatio="xMidYMin slice"
+                                                                                       viewBox="0 0 24 24" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-dbb1"></use></svg><svg
+                    class="u-svg-content" viewBox="0 0 24 24" id="svg-dbb1"><g><path
+                    d="m23.5 3h-8c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h8c.276 0 .5.224.5.5s-.224.5-.5.5z"></path>
+</g><g><g><path d="m23.5 8h-12c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.276 0 .5.224.5.5s-.224.5-.5.5z"></path>
+</g>
+</g><g><g><path d="m23.5 13h-12c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.276 0 .5.224.5.5s-.224.5-.5.5z"></path>
+</g>
+</g><g><g><path d="m23.5 18h-12c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.276 0 .5.224.5.5s-.224.5-.5.5z"></path>
+</g>
+</g><g><g><path d="m23.5 23h-12c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h12c.276 0 .5.224.5.5s-.224.5-.5.5z"></path>
+</g>
+</g><g><path d="m8.5 5h-8c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h8c.276 0 .5.224.5.5s-.224.5-.5.5z"></path>
+</g><g><path d="m4.5 9c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l3.647-3.647-3.647-3.646c-.195-.195-.195-.512 0-.707s.512-.195.707 0l4 4c.195.195.195.512 0 .707l-4 4c-.097.097-.225.146-.353.146z"></path>
+</g></svg></span>
+                <h4 class="u-custom-font u-text u-text-5">Check your sentences</h4>
+                <p class="u-text u-text-6">In this section, we verify your paragraph (sentence by sentence) with our
+                    models.</p>
+                <a href="{% url 'fakenews:sentence' %}"
+                   class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-none u-text-black u-text-hover-white u-btn-3">CLICK</a>
+            </div>
+        </div>
+
+
+        <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white">
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span
+                    class="u-gradient u-icon u-icon-circle u-spacing-18 u-icon-4"><svg class="u-svg-link"
+                                                                                       preserveAspectRatio="xMidYMin slice"
+                                                                                       viewBox="0 0 142.853 142.853"
+                                                                                       style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e795"></use></svg><svg
+                    class="u-svg-content" viewBox="0 0 142.853 142.853" x="0px" y="0px" id="svg-e795"
+                    style="enable-background:new 0 0 142.853 142.853;"><g><g><path
+                    d="M44.789,61.217c40.687-8.595,77.064-5.533,83.256-0.514c-0.636,3.552,1.439,7.111,4.971,8.241    c0.74,0.236,1.49,0.351,2.229,0.351c3.094,0,5.965-1.979,6.959-5.082c1.457-4.555,0.438-9.228-2.807-12.814    c-12.994-14.382-65.938-11.177-97.629-4.479c-17.028,3.596-22.953,2.146-24.583,1.469c0.056-0.178,0.126-0.36,0.2-0.502    c1.939-3.474,0.741-7.874-2.714-9.881c-3.491-2.027-7.963-0.84-9.99,2.65c-2.349,4.046-3.686,10.712,0.275,16.188    C10.435,64.41,23.088,65.801,44.789,61.217z"></path><path
+                    d="M42.353,97.759c40.683-8.594,77.066-5.53,83.257-0.516c-0.637,3.554,1.438,7.111,4.969,8.242    c0.74,0.236,1.491,0.352,2.229,0.352c3.094,0,5.966-1.979,6.96-5.082c1.457-4.557,0.436-9.229-2.808-12.813    c-12.991-14.383-65.936-11.175-97.629-4.479c-17.028,3.596-22.953,2.146-24.583,1.469c0.056-0.178,0.126-0.36,0.2-0.502    c1.939-3.474,0.741-7.873-2.714-9.881c-3.488-2.026-7.961-0.838-9.99,2.649c-2.349,4.047-3.686,10.712,0.275,16.188    C7.996,100.951,20.652,102.344,42.353,97.759z"></path>
+</g>
+</g></svg></span>
+                <h4 class="u-custom-font u-text u-text-7">Check text similarity</h4>
+                <p class="u-text u-text-8">In this section, we check your text's similarity with other texts in our
+                    dataset and display the top 5 similar texts.</p>
+                <a href="{% url 'fakenews:similarity' %}"
+                   class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-none u-text-black u-text-hover-white u-btn-4">CLICK</a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="u-align-center u-clearfix u-gradient u-section-3" id="carousel_d8f9">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-sheet-1">
+        <div class="u-palette-2-light-2 u-shape u-shape-rectangle u-shape-1"></div>
+        <div class="u-align-center u-container-style u-group u-palette-2-dark-3 u-shape-rectangle u-group-1">
+            <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
+                <p class="u-custom-font u-heading-font u-text u-text-1">Checkovid is a covid-19 fact-checking website
+                    that can predict the credit of a claim, news, and tweets about covid-19. We used natural language
+                    processing and different machine learning and deep learning algorithms to predict fake news. For
+                    predicting these claims, we implement 3 approaches: paragraph-based, sentence-based, and
+                    network-based. Also, you can see the similarity of your input claim with other claims in our dataset
+                    with cosine similarty.</p>
+            </div>
+        </div>
+        <blockquote class="u-align-center-sm u-align-center-xs u-indent-0 u-text u-text-2">About</blockquote>
+    </div>
+</section>
+
+
+<section class="u-align-left u-clearfix u-white u-section-4" id="sec-00f0">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-expanded-width u-tab-links-align-justify u-tabs u-tabs-1">
+            <ul class="u-palette-2-dark-3 u-spacing-0 u-tab-list u-unstyled u-tab-list-1" role="tablist">
+                <li class="u-tab-item u-tab-item-1" role="presentation">
+                    <a class="active u-active-palette-2-base u-button-style u-tab-link u-tab-link-1" id="link-tab-54c8"
+                       href="#tab-54c8" role="tab" aria-controls="tab-54c8" aria-selected="true">Datasets</a>
+                </li>
+                <li class="u-tab-item u-tab-item-2" role="presentation">
+                    <a class="u-active-palette-2-base u-button-style u-tab-link u-tab-link-2" id="link-tab-b32c"
+                       href="#tab-b32c" role="tab" aria-controls="tab-b32c" aria-selected="false">Paper</a>
+                </li>
+            </ul>
+            <div class="u-tab-content">
+                <div class="u-container-style u-grey-10 u-tab-active u-tab-pane u-tab-pane-1" id="tab-54c8"
+                     role="tabpanel" aria-labelledby="link-tab-54c8">
+                    <div class="u-container-layout u-container-layout-1">
+                        <h4 class="u-text u-text-default u-text-1">Paragraph-based</h4>
+                        <div class="u-align-left u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+                        <ul class="u-text u-text-2">
+                            <li>
+                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Claims</span>
+                            </li>
+                        </ul>
+                        <p class="u-custom-font u-heading-font u-text u-text-3">We get the list of the fact-checking
+                            organization provided by the Reporters' Lab at Duke University. We collected all of the
+                            tweet's URLs about coronavirus and covid19 and classified them into REAL and FAKE news based
+                            on these fact-checking websites. Finally, we extract tweets' IDs and get all the information
+                            about the tweets with Twitter API. This dataset contains 18,000 tweets and all network
+                            information about users and tweets divided into REAL and FAKE tweets.<br>
+                        </p>
+                        <a href="https://docs.google.com/spreadsheets/d/1VBvjYBXWgZiaKA_judJ3R-8K-Z4oUhTQuKlCr3rU6Ac/edit?usp=sharing"
+                           class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-1"
+                           target="_blank">Access the dataset</a>
+                        <h4 class="u-text u-text-4">Sentence-based</h4>
+                        <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
+                        <ul class="u-text u-text-5">
+                            <li style="">
+                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Sentences</span>
+                            </li>
+                        </ul>
+                        <p class="u-text u-text-6">For spotting fake news among the real news, We divided each paragraph
+                            in the dataset into sentences using the Spacy library and remove pointless sentences
+                            Manually. This dataset contains 15,636 sentences that are classified based on its paragraph
+                            verdict.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/17iCCcOq1QfrfDJ0bJF0RLe4vhC5uytOBSL426Tm_v00/edit?usp=sharing"
+                           class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-2"
+                           target="_blank">Access the dataset</a>
+                        <h4 class="u-text u-text-7">Network-based</h4>
+                        <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
+                        <ul class="u-text u-text-8">
+                            <li style="">
+                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Tweets</span>
+                            </li>
+                        </ul>
+                        <p class="u-text u-text-9">This dataset contains all of the information that the extracted with
+                            Twitter API.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1b0554t_9rHEWzwkJLAaLmKeE0k9DHej93XiL1aS7NDg/edit?usp=sharing"
+                           class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-3"
+                           target="_blank">Access the dataset</a>
+                        <ul class="u-text u-text-10">
+                            <li style="">
+                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Users</span>
+                            </li>
+                        </ul>
+                        <p class="u-text u-text-11">This dataset contains all of the information about the users that
+                            write REAL and FAKE tweets.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1fTDiNBKvfFmXrIDTHWc5EPfSN6TLvRmRaNWsRA4fLx8/edit?usp=sharing"
+                           class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-4"
+                           target="_blank">Access the dataset</a>
+                        <ul class="u-text u-text-12">
+                            <li style="">
+                                <span style="font-weight: 700;">Checkovid - Covid19 Fake News in Twitter</span>
+                            </li>
+                        </ul>
+                        <p class="u-text u-text-13">We extracted 42 features from the above two datasets that show
+                            different information about REAL and FAKE tweets and Twitter users, such as retweet count,
+                            date, text stop words percent, etc. </p>
+                        <a href="https://docs.google.com/spreadsheets/d/1U2k4IZkdtllsABaAUx0lcv3kXZEVCzZw_F8Gizol1H0/edit?usp=sharing"
+                           class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-5"
+                           target="_blank">Access the dataset</a>
+                    </div>
+                </div>
+                <div class="u-container-style u-grey-10 u-tab-pane u-tab-pane-2" id="tab-b32c" role="tabpanel"
+                     aria-labelledby="link-tab-b32c">
+                    <div class="u-container-layout u-container-layout-2">
+                        <h4 class="u-text u-text-default u-text-14">Paper</h4>
+                        <div class="u-align-left u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-4"></div>
+                        <p class="u-text u-text-15">Abstract here...</p>
+                        <a href="#"
+                           class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-custom-color-5 u-btn-6"
+                           target="_blank">pdf</a>
+                        <h4 class="u-text u-text-16">Citation</h4>
+                        <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-5"></div>
+                        <p class="u-text u-text-17">Citation here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-custom-color-3 u-footer u-footer"
+        style="background-color: #56727d"
+        id="sec-4f1f">
+    <div class="u-clearfix u-sheet u-sheet-1">
+        <a href="{% url 'fakenews:home' %}" class="u-image u-logo u-image-1">
+            <img src="{% static '/image/logo1.png' %}" class="u-logo-image u-logo-image-1" data-image-width="80">
+        </a>
+        <div class="u-align-left u-social-icons u-spacing-10 u-social-icons-1">
+            <a class="u-social-url" target="_blank" title="Github" href="https://github.com/sajaddadgar"><span
+                    class="u-icon u-icon-circle u-social-github u-social-icon u-text-black u-icon-1"><svg
+                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-32ab"></use></svg><svg
+                    class="u-svg-content" id="svg-32ab" style=""><circle fill="currentColor" cx="56.1" cy="56.1"
+                                                                         r="55"></circle><path fill="#FFFFFF" d="M88,51.3c0-5.5-1.9-10.2-5.3-13.7c0.6-1.3,2.3-6.5-0.5-13.5c0,0-4.2-1.4-14,5.3c-4.1-1.1-8.4-1.7-12.7-1.8
+	c-4.3,0-8.7,0.6-12.7,1.8c-9.7-6.6-14-5.3-14-5.3c-2.8,7-1,12.2-0.5,13.5C25,41.2,23,45.7,23,51.3c0,19.6,11.9,23.9,23.3,25.2
+	c-1.5,1.3-2.8,3.5-3.2,6.8c-3,1.3-10.2,3.6-14.9-4.3c0,0-2.7-4.9-7.8-5.3c0,0-5-0.1-0.4,3.1c0,0,3.3,1.6,5.6,7.5c0,0,3,9.1,17.2,6
+	c0,4.3,0.1,8.3,0.1,9.5h25.2c0-1.7,0.1-7.2,0.1-14c0-4.7-1.7-7.9-3.4-9.4C76,75.2,88,70.9,88,51.3z"></path></svg></span>
+            </a>
+            <a class="u-social-url" target="_blank" title="Google Plus" href="mailto:sajad.dadgar98@gmail.com"><span
+                    class="plus u-icon u-icon-circle u-social-google u-social-icon u-text-black u-icon-2"><svg
+                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4025"></use></svg><svg
+                    class="u-svg-content" id="svg-4025" style=""><circle fill="currentColor" cx="56.1" cy="56.1"
+                                                                         r="55"></circle><path fill="#FFFFFF" d="M60.8,76.3c-6.6,8.6-19,11.1-29,7.7c-10.6-3.5-18.4-14.2-18.2-25.5C13,44.6,25.3,31.8,39.1,31.6
+	c7.1-0.6,14,2.1,19.3,6.6c-2.2,2.4-4.4,4.8-6.9,7.1c-4.8-2.9-10.4-5-15.9-3.1c-8.8,2.6-14.3,13-10.9,21.8
+	c2.7,9.1,13.7,14.1,22.5,10.2c4.5-1.6,7.5-5.7,8.7-10.2c-5.1-0.1-10.2,0-15.5-0.2c0-3,0-6.1,0-9.2c8.6,0,17.1,0,25.7,0
+	C66.7,62.3,65.5,70.4,60.8,76.3z M98.3,62.5c-2.6,0-5.1,0-7.7,0c0,2.6,0,5.1,0,7.7c-2.6,0-5.1,0-7.7,0c0-2.6,0-5.1,0-7.7
+	c-2.6,0-5.1,0-7.7,0c0-2.6,0-5.1,0-7.7c2.6,0,5.1,0,7.7,0c0-2.6,0-5.1,0.1-7.7c2.6,0,5.1,0,7.7,0c0,2.6,0,5.1,0,7.7
+	c2.6,0,5.1,0,7.7,0C98.3,57.3,98.3,59.9,98.3,62.5z"></path></svg></span>
+            </a>
+            <a class="u-social-url" target="_blank" title="LinkedIn"
+               href="https://www.linkedin.com/in/sajaddadgar/"><span
+                    class="u-icon u-icon-circle u-social-icon u-social-linkedin u-text-black u-icon-3"><svg
+                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use
+                    xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-ffb9"></use></svg><svg
+                    class="u-svg-content" id="svg-ffb9" style=""><circle fill="currentColor" cx="56.1" cy="56.1"
+                                                                         r="55"></circle><path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
+            C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
+            H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path></svg></span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
