@@ -158,3 +158,8 @@ def similarity(request):
 #         claim = Claim(text=text, verdict=verdict, vector=document_to_vector_json)
 #         claim.save()
 #     return render(request, 'Page-4.html')
+
+
+def error_404(request, exception):
+    return render(request, '404.html')
+

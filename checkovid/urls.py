@@ -21,3 +21,5 @@ urlpatterns = [
     path('', include('fakenews.urls')),
     path('admin/', admin.site.urls),
 ]
+
+handler404 = 'fakenews.views.error_404'
