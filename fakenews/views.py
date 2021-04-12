@@ -86,7 +86,7 @@ def sentence(request):
 def tweet(request):
     tweet_url = str(request.POST.get('tweet_url'))
     if (tweet_url != 'None') and (tweet_url != ''):
-        tweet_info, lang, text, text_standard = extract_tweets_feature(tweet_url)
+        tweet_info, lang, text, text_standard, mention_reliable_user = extract_tweets_feature(tweet_url)
         tweet_prediction, text_prediction, label = netword_predict(tweet_info, text)
         tweet_prediction = '{:.2f}'.format(tweet_prediction * 100)
         prediction = [text_prediction, tweet_prediction]
@@ -102,7 +102,8 @@ def tweet(request):
             'prediction': prediction,
             'text_standard': text_standard,
             'label': label,
-            'text': text
+            'text': text,
+            'mention_reliable_user': mention_reliable_user
         }
     else:
         stuff = {

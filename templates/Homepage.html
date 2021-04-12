@@ -15,8 +15,28 @@
     <link id="u-page-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Oswald:200,300,400,500,600,700">
     <link rel="icon" href="{% static 'image/logo1.png' %}">
+
+    <style>
+
+        #loading{
+            position: fixed;
+            width: 100%;
+            {#left: 50%;#}
+            height: 100vh;
+            background: #009adc url("{% static 'image/loader.gif' %}") no-repeat center;
+
+            z-index: 99999;
+        }
+
+    </style>
+
+
 </head>
-<body class="u-body">
+
+
+<body class="u-body" onload="preload_function()">
+
+<div id="loading"></div>
 
 <header class="u-clearfix u-gradient u-header u-header" id="sec-a060">
     <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -399,6 +419,17 @@
 
 
     </span>
+
+
+<script>
+
+    var preloader = document.getElementById('loading');
+    function preload_function() {
+        preloader.style.display = 'none'
+    }
+    
+    
+</script>
 
 </body>
 </html>

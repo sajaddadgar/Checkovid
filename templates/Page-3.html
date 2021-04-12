@@ -212,7 +212,7 @@
                         <tbody class="u-align-center u-custom-font u-heading-font u-table-alt-palette-1-light-3 u-table-body u-table-body-1">
                         <tr style="height: 45px;">
                             <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-3">
-                                Text
+                                Preprocessed text
                             </td>
                             <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ text }}</td>
                         </tr>
@@ -258,30 +258,27 @@
                             </td>
                             <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.adjective_count }}</td>
                         </tr>
+
+
+
+
                         <tr style="height: 26px;">
                             <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-19">
-                                Coleman liau index
+                                Mention reliable user
                             </td>
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-20">{{ tweet_info.coleman_liau_index }}</td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-20">{{ mention_reliable_user }}</td>
                         </tr>
+
+
+
+
                         <tr style="height: 52px;">
-                            <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-21">
-                                Dale chall readability score
-                            </td>
-                            <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.dale_chall_readability_score }}</td>
-                        </tr>
-                        <tr style="height: 52px;">
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-23">
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-21">
                                 Pronoun count
                             </td>
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-24">{{ tweet_info.pronoun_count }}</td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-22" style="background-color: #fcefec; color: black">{{ tweet_info.pronoun_count }}</td>
                         </tr>
-                        <tr style="height: 52px;">
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-25">
-                                Flesch reading ease
-                            </td>
-                            <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.flesch_reading_ease }}</td>
-                        </tr>
+
                         <tr style="height: 29px;">
                             <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-27">
                                 Proper noun count
@@ -312,42 +309,26 @@
                             </td>
                             <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-36">{{ tweet_info.hashtag_count }}</td>
                         </tr>
-                        <tr style="height: 51px;">
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-37">
-                                Smog index
-                            </td>
-                            <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.smog_index }}</td>
-                        </tr>
+
                         <tr style="height: 52px;">
                             <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-39">
                                 User tweet count
                             </td>
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-40">{{ tweet_info.user_tweet_count }}</td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-40" style="background-color: #fcefec; color: black">{{ tweet_info.user_tweet_count }}</td>
                         </tr>
                         <tr style="height: 52px;">
                             <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-41">
                                 Mention count
                             </td>
-                            <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.mention_count }}</td>
+                            <td class="u-custom-font u-heading-font u-table-cell" style="background-color: #557c89; color: white">{{ tweet_info.mention_count }}</td>
                         </tr>
                         <tr style="height: 52px;">
                             <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-43">
                                 Retweet count
                             </td>
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-44">{{ tweet_info.retweet_count }}</td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-44" style="background-color: #fcefec; color: black">{{ tweet_info.retweet_count }}</td>
                         </tr>
-                        <tr style="height: 52px;">
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-45">
-                                Flesch kincaid grade
-                            </td>
-                            <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.flesch_kincaid_grade }}</td>
-                        </tr>
-                        <tr style="height: 52px;">
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-47">
-                                Gunning fog
-                            </td>
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-48">{{ tweet_info.gunning_fog }}</td>
-                        </tr>
+
                         </tbody>
                     </table>
                 </div>

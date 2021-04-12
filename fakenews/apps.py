@@ -31,12 +31,12 @@ class FakenewsConfig(AppConfig):
     with open('./models/paragraph_base/tokenizer/words.pickle', 'rb') as handle:
         paragraph_base_tokenizer = pickle.load(handle)
     with open('./models/paragraph_base/tokenizer/finalized_tfidfvectorizer.pickle', 'rb') as handle:
-        paragraph_base_countvectorizer = pickle.load(handle)
+        paragraph_base_tfidfvectorizer = pickle.load(handle)
 
     with open('./models/sentence_base/tokenizer/words.pickle', 'rb') as handle:
         sentence_base_tokenizer = pickle.load(handle)
     with open('./models/sentence_base/tokenizer/finalized_tfidfvectorizer.pickle', 'rb') as handle:
-        sentence_base_countvectorizer = pickle.load(handle)
+        sentence_base_tfidfvectorizer = pickle.load(handle)
 
     with open('./models/network_base/tokenizer/labelEncoder.pickle', 'rb') as handle:
         network_base_labelencoder = pickle.load(handle)
