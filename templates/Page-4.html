@@ -82,10 +82,11 @@
         <div alt="" class="u-image u-image-circle u-image-1" data-image-width="612" data-image-height="539"
              data-animation-name="jackInTheBox" data-animation-duration="1000" data-animation-delay="0"
              data-animation-direction=""></div>
-        <h1 class="u-align-center u-heading-font u-text u-title u-text-1" style="width: 600px">Check text similarity</h1>
-        <p class="u-align-center u-large-text u-text u-text-variant u-text-2">We convert your input text into a vector
-            with CORD-19 word embedding and calculate cosine similarity with each text in our dataset and return the top
-            5 similar texts and their verdict.</p>
+        <h1 class="u-align-center u-heading-font u-text u-title u-text-1" style="width: 600px">Check text
+            similarity</h1>
+        <p class="u-align-center u-large-text u-text u-text-variant u-text-2">We convert the input claim into a vector
+            using the word embedding model and calculate cosine similarity with each text in our dataset and return the
+            top 5 similar texts and their verdict.</p>
         <div class="u-form u-form-1">
             <form method="post" action="">
                 {% csrf_token %}
@@ -109,63 +110,65 @@
 
 
 {% if show_verdict %}
-<section
-        class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-custom-color-1 u-section-2"
-        id="sec-dd74">
-    <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
-        <div class="u-border-5 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
-        <h1 class="u-align-center u-text u-text-body-alt-color u-text-1">Top 5 similar claims</h1>
-    </div>
-</section>
-<section class="u-align-center u-clearfix u-custom-color-1 u-section-3" id="sec-d660">
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <div class="u-table u-table-responsive u-table-1">
-            <table class="u-table-entity u-table-entity-1">
-                <colgroup>
-                    <col width="50%">
-                    <col width="50%">
-                </colgroup>
-                <thead class="u-align-center u-custom-font u-heading-font u-palette-2-dark-3 u-table-header u-table-header-1">
-                <tr style="height: 45px;">
-                    <th class="u-table-cell">Text</th>
-                    <th class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-2">Verdict</th>
-                </tr>
-                </thead>
-
-                <tbody class="u-align-center u-custom-font u-heading-font u-table-alt-palette-1-light-3 u-table-body u-table-body-1">
-
-                <tr style="height: 49px;">
-                    <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-3">
-                        {{ top5.0.0 }}
-                    </td>
-                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ top5.0.1 }}</td>
-                </tr>
-
-                <tr style="height: 45px;">
-                    <td class="u-custom-font u-first-column u-heading-font u-table-cell">{{ top5.1.0 }}</td>
-                    <td class="u-table-cell">{{ top5.1.1 }}</td>
-                </tr>
-                <tr style="height: 52px;">
-                    <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-7">
-                        {{ top5.2.0 }}
-                    </td>
-                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-8">{{ top5.2.1 }}</td>
-                </tr>
-                <tr style="height: 52px;">
-                    <td class="u-custom-font u-heading-font u-table-cell">{{ top5.3.0 }}</td>
-                    <td class="u-table-cell">{{ top5.3.1 }}</td>
-                </tr>
-                <tr style="height: 52px;">
-                    <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-11">
-                        {{ top5.4.0 }}
-                    </td>
-                    <td class="u-palette-2-dark-1 u-table-cell u-table-cell-12">{{ top5.4.1 }}</td>
-                </tr>
-                </tbody>
-            </table>
+    <section
+            class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-custom-color-1 u-section-2"
+            id="sec-dd74">
+        <div class="u-clearfix u-sheet u-valign-middle-xl u-sheet-1">
+            <div class="u-border-5 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+            <h1 class="u-align-center u-text u-text-body-alt-color u-text-1">Top 5 similar claims</h1>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="u-align-center u-clearfix u-custom-color-1 u-section-3" id="sec-d660">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-table u-table-responsive u-table-1">
+                <table class="u-table-entity u-table-entity-1">
+                    <colgroup>
+                        <col width="50%">
+                        <col width="50%">
+                    </colgroup>
+                    <thead class="u-align-center u-custom-font u-heading-font u-palette-2-dark-3 u-table-header u-table-header-1">
+                    <tr style="height: 45px;">
+                        <th class="u-table-cell">Text</th>
+                        <th class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-2">
+                            Verdict
+                        </th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="u-align-center u-custom-font u-heading-font u-table-alt-palette-1-light-3 u-table-body u-table-body-1">
+
+                    <tr style="height: 49px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-3">
+                            {{ top5.0.0 }}
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ top5.0.1 }}</td>
+                    </tr>
+
+                    <tr style="height: 45px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-table-cell">{{ top5.1.0 }}</td>
+                        <td class="u-table-cell">{{ top5.1.1 }}</td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-7">
+                            {{ top5.2.0 }}
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-8">{{ top5.2.1 }}</td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-heading-font u-table-cell">{{ top5.3.0 }}</td>
+                        <td class="u-table-cell">{{ top5.3.1 }}</td>
+                    </tr>
+                    <tr style="height: 52px;">
+                        <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-11">
+                            {{ top5.4.0 }}
+                        </td>
+                        <td class="u-palette-2-dark-1 u-table-cell u-table-cell-12">{{ top5.4.1 }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
 {% endif %}
 
@@ -236,7 +239,6 @@
 {#</section>#}
 {##}
 {#{% endif %}#}
-
 
 
 <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {
