@@ -86,7 +86,7 @@ def sentence(request):
 def tweet(request):
     tweet_url = str(request.POST.get('tweet_url'))
     if (tweet_url != 'None') and (tweet_url != ''):
-        tweet_info, lang, text, text_standard, mention_reliable_user = extract_tweets_feature(tweet_url)
+        tweet_info, lang, text, text_standard, aux_features = extract_tweets_feature(tweet_url)
         tweet_prediction, text_prediction, label = netword_predict(tweet_info, text)
         tweet_prediction = '{:.2f}'.format(tweet_prediction * 100)
         prediction = [text_prediction, tweet_prediction]
@@ -103,7 +103,7 @@ def tweet(request):
             'text_standard': text_standard,
             'label': label,
             'text': text,
-            'mention_reliable_user': mention_reliable_user
+            'aux_features': aux_features
         }
     else:
         stuff = {
@@ -116,23 +116,23 @@ def tweet(request):
 def home(request):
     return render(request, 'homepage.html')
 
-def similarity2(request):
-    text = str(request.POST.get('text'))
-
-    if (text != 'None') and (text != ''):
-        top5 = get_top_5_similar(text)
-        stuff = {
-            'show_verdict': True,
-            'top5': top5
-        }
-    else:
-        stuff = {
-            'show_verdict': False,
-        }
-
-
-
-    return render(request, 'Page-4.html', stuff)
+# def similarity2(request):
+#     text = str(request.POST.get('text'))
+#
+#     if (text != 'None') and (text != ''):
+#         top5 = get_top_5_similar(text)
+#         stuff = {
+#             'show_verdict': True,
+#             'top5': top5
+#         }
+#     else:
+#         stuff = {
+#             'show_verdict': False,
+#         }
+#
+#
+#
+#     return render(request, 'Page-4.html', stuff)
 
 
 def similarity(request):

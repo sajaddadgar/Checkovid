@@ -9,6 +9,7 @@ import operator
 from fakenews.models import Claim
 from .twitter import get_tweets_by_id, get_user_by_id
 import spacy
+from textblob import TextBlob
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize, TweetTokenizer
@@ -366,6 +367,12 @@ def calculate_tweet_features(tweet_json):
 
     text = tweet_json['full_text']
 
+    aux_features = {}
+    punctuation_count = len([a for a in str(text) if a in string.punctuation])
+    aux_features['punctuation_percent'] = punctuation_count / len(text)
+
+
+
     if tweet_json['lang'] != 'en':
         text = translator.translate(text, lang_tgt='en')
 
@@ -452,7 +459,14 @@ def calculate_tweet_features(tweet_json):
             mention_reliable_user = 1
             break
 
-    return tweet_info, text_standard, mention_reliable_user
+    aux_features['mention_reliable_user'] = mention_reliable_user
+    aux_features['like_count'] = tweet_json['favorite_count']
+    aux_features['followers_count'] = tweet_json['user']['followers_count']
+    aux_features['following_count'] = tweet_json['user']['friends_count']
+    aux_features['sentiment'] = TextBlob(str(text)).polarity
+
+
+    return tweet_info, text_standard, aux_features
 
 
 def predict_tweet_text(text):
@@ -482,8 +496,8 @@ def predict_tweet_text(text):
 def extract_tweets_feature(tweet_url):
     tweet_id = str(tweet_url).split('status/')[1]
     tweet_json = get_tweets_by_id(tweet_id)
-    tweet_info, text_standard, mention_reliable_user = calculate_tweet_features(tweet_json)
-    return tweet_info, tweet_json['lang'], tweet_json['full_text'], text_standard, mention_reliable_user
+    tweet_info, text_standard, aux_features = calculate_tweet_features(tweet_json)
+    return tweet_info, tweet_json['lang'], tweet_json['full_text'], text_standard, aux_features
 
 
 def netword_predict(tweet_info, text):
