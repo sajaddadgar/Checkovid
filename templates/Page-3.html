@@ -153,8 +153,10 @@
     <section class="u-clearfix u-custom-color-1 u-section-2" id="sec-c83a">
         <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-sheet-1">
             <div class="u-border-5 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+            {% if correct_lang %}
             <h4 class="u-align-center u-text u-text-1">The tweet's text is not English. Therefore we use google
                 translate to translate the text of the given tweet.</h4>
+                {% endif %}
             <div class="u-clearfix u-expanded-width u-gutter-18 u-layout-wrap u-layout-wrap-1">
                 <div class="u-layout">
                     <div class="u-layout-row">
@@ -218,7 +220,7 @@
                         <tbody class="u-align-center u-custom-font u-heading-font u-table-alt-palette-1-light-3 u-table-body u-table-body-1">
                         <tr style="height: 45px;">
                             <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-3">
-                                Preprocessed text
+                                Text
                             </td>
                             <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-4">{{ text }}</td>
                         </tr>
@@ -260,9 +262,9 @@
                         </tr>
                         <tr style="height: 52px;">
                             <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-17">
-                                Adjective count
+                                Sentiment
                             </td>
-                            <td class="u-custom-font u-heading-font u-table-cell">{{ tweet_info.adjective_count }}</td>
+                            <td class="u-custom-font u-heading-font u-table-cell">{{ aux_features.sentiment }}</td>
                         </tr>
 
 
@@ -270,16 +272,16 @@
                             <td class="u-custom-font u-first-column u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-19">
                                 Mention reliable user
                             </td>
-                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-20">{{ mention_reliable_user }}</td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-20">{{ aux_features.mention_reliable_user }}</td>
                         </tr>
 
 
                         <tr style="height: 52px;">
                             <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-21">
-                                Pronoun count
+                                punctuation character percent
                             </td>
                             <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-22"
-                                style="background-color: #fcefec; color: black">{{ tweet_info.pronoun_count }}</td>
+                                style="background-color: #fcefec; color: black">{{ aux_features.punctuation_percent }}</td>
                         </tr>
 
                         <tr style="height: 29px;">
@@ -333,6 +335,22 @@
                             </td>
                             <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-44"
                                 style="background-color: #fcefec; color: black">{{ tweet_info.retweet_count }}</td>
+                        </tr>
+
+                        <tr style="height: 52px;">
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-45">
+                                followers count
+                            </td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-46"
+                                style="background-color: #557c89; color: white">{{ aux_features.followers_count }}</td>
+                        </tr>
+
+                        <tr style="height: 52px;">
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-3 u-table-cell u-table-cell-47">
+                                following count
+                            </td>
+                            <td class="u-custom-font u-heading-font u-palette-2-dark-1 u-table-cell u-table-cell-48"
+                                style="background-color: #fcefec; color: black">{{ aux_features.following_count }}</td>
                         </tr>
 
                         </tbody>
