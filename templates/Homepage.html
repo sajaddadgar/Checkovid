@@ -9,33 +9,32 @@
     <link rel="stylesheet" href="{% static '/css/Homepage.css' %}" media="screen">
     <script class="u-script" type="text/javascript" src="{% static '/js/jquery.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static '/js/page.js' %}" defer=""></script>
-    {#    <link id="u-theme-google-font" rel="stylesheet">#}
     <link id="u-theme-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Oswald:200,300,400,500,600,700">
     <link rel="icon" href="{% static 'image/logo1.png' %}">
 
-    <style>
-
-        #loading {
-            position: fixed;
-            width: 100%;
-        {#left: 50%;#} height: 100vh;
-            background: #009adc url("{% static 'image/loader.gif' %}") no-repeat center;
-
-            z-index: 99999;
-        }
-
-    </style>
+    {#    <style>#}
+    {##}
+    {#        #loading {#}
+    {#            position: fixed;#}
+    {#            width: 100%;#}
+    {#        left: 50%; height: 100vh;#}
+    {#            background: #009adc url("{% static 'image/loader.gif' %}") no-repeat center;#}
+    {##}
+    {#            z-index: 99999;#}
+    {#        }#}
+    {##}
+    {#    </style>#}
 
 
 </head>
 
+{#onload="preload_function()"#}
+<body class="u-body">
 
-<body class="u-body" onload="preload_function()">
-
-<div id="loading"></div>
+{#<div id="loading"></div>#}
 
 <header class="u-clearfix u-gradient u-header u-header" id="sec-a060">
     <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -163,8 +162,8 @@
 </g>
 </g></svg></span>
                 <h4 class="u-custom-font u-text u-text-1">Check your paragraph</h4>
-                <p class="u-text u-text-2">In this section, you can write your claim and get its verdict with our
-                    artificial intelligence&nbsp;models.</p>
+                <p class="u-text u-text-2">In this section, you can write your claim and get its verdict using our
+                    trained models.</p>
                 <a href="{% url 'fakenews:claim' %}"
                    class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-text-black u-text-hover-white u-btn-1">CLICK</a>
             </div>
@@ -191,8 +190,9 @@
 </g></svg></span>
                 <h4 class="u-custom-font u-text u-text-3">Check your tweet<br>
                 </h4>
-                <p class="u-text u-text-4">In this section, you can give a tweet link and get its verdict with
-                    difference approaches.</p>
+                <p class="u-text u-text-4">In this section, we extract tweet and user features using the Twitter API and
+                    predict its verdict from a social context perspective.
+                </p>
                 <a href="{% url 'fakenews:tweet' %}"
                    class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-text-black u-text-hover-white u-btn-2">CLICK</a>
             </div>
@@ -219,8 +219,8 @@
 </g><g><path d="m4.5 9c-.128 0-.256-.049-.354-.146-.195-.195-.195-.512 0-.707l3.647-3.647-3.647-3.646c-.195-.195-.195-.512 0-.707s.512-.195.707 0l4 4c.195.195.195.512 0 .707l-4 4c-.097.097-.225.146-.353.146z"></path>
 </g></svg></span>
                 <h4 class="u-custom-font u-text u-text-5">Check your sentences</h4>
-                <p class="u-text u-text-6">In this section, we verify your paragraph (sentence by sentence) with our
-                    models.</p>
+                <p class="u-text u-text-6">In this section, we predict the veracity of your input claims sentence by
+                    sentence using various models.</p>
                 <a href="{% url 'fakenews:sentence' %}"
                    class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-none u-text-black u-text-hover-white u-btn-3">CLICK</a>
             </div>
@@ -241,8 +241,10 @@
 </g>
 </g></svg></span>
                 <h4 class="u-custom-font u-text u-text-7">Check text similarity</h4>
-                <p class="u-text u-text-8">In this section, we check your text's similarity with other texts in our
-                    dataset and display the top 5 similar texts.</p>
+                <p class="u-text u-text-8">In this section, you can check your input claim by its similarity with other
+                    texts in our dataset and display the top 5 similar texts with their verdict.
+
+                </p>
                 <a href="{% url 'fakenews:similarity' %}"
                    class="u-border-2 u-border-black u-btn u-button-style u-hover-palette-2-dark-2 u-none u-text-black u-text-hover-white u-btn-4">CLICK</a>
             </div>
@@ -258,12 +260,12 @@
         <div class="u-palette-2-light-2 u-shape u-shape-rectangle u-shape-1"></div>
         <div class="u-align-center u-container-style u-group u-palette-2-dark-3 u-shape-rectangle u-group-1">
             <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-container-layout-1">
-                <p class="u-custom-font u-heading-font u-text u-text-1">Checkovid is a covid-19 fact-checking website
-                    that can predict the credit of a claim, news, and tweets about covid-19. We used natural language
-                    processing and different machine learning and deep learning algorithms to predict fake news. For
-                    predicting these claims, we implement 3 approaches: paragraph-based, sentence-based, and
-                    network-based. Also, you can see the similarity of your input claim with other claims in our dataset
-                    with cosine similarty.</p>
+                <p class="u-custom-font u-heading-font u-text u-text-1">Checkovid is a COVID-19 fact-checking website
+                    that uses natural language processing techniques and machine learning algorithms divided into
+                    traditional machine learning, ensemble learning, and deep learning algorithms to detect COVID-19
+                    related misinformation automatically on Twitter. Checkovid employs three approaches: Text-based,
+                    Network-based,
+                    and Similarity-based, which detect misinformation from different aspects.</p>
             </div>
         </div>
         <blockquote class="u-align-center-sm u-align-center-xs u-indent-0 u-text u-text-2">About</blockquote>
@@ -292,17 +294,13 @@
                         <div class="u-align-left u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
                         <ul class="u-text u-text-2">
                             <li>
-                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Claims</span>
+                                <span style="font-weight: 700;">Checkovid_Claims</span>
                             </li>
                         </ul>
-                        <p class="u-custom-font u-heading-font u-text u-text-3">We get the list of the fact-checking
-                            organization provided by the Reporters' Lab at Duke University and reliable organizations
-                            with expertise relating to the SARS-CoV-2 (COVID-19) pandemic, such as the World Health
-                            Organization (WHO). We collected all of the tweet's URLs about coronavirus and covid19 and
-                            classified them into REAL and FAKE news based on these fact-checking websites. Finally, we
-                            extract tweets' IDs and get all the information about the tweets with Twitter API. This
-                            dataset contains 18,000 tweets and all network information about users and tweets divided
-                            into REAL and FAKE tweets.<br>
+                        <p class="u-custom-font u-heading-font u-text u-text-3">This dataset contains 18,000 tweets
+                            collected from fact-checking websites and reliable organizations with expertise relating to
+                            the SARS-CoV-2 (Coronavirus) and COVID-19 pandemic, such as the World Health Organization
+                            (WHO) divided into REAL and FAKE tweets.<br>
                         </p>
                         <a href="https://docs.google.com/spreadsheets/d/1VBvjYBXWgZiaKA_judJ3R-8K-Z4oUhTQuKlCr3rU6Ac/edit?usp=sharing"
                            class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-1"
@@ -311,13 +309,13 @@
                         <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-2"></div>
                         <ul class="u-text u-text-5">
                             <li style="">
-                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Sentences</span>
+                                <span style="font-weight: 700;">Checkovid_Sentences</span>
                             </li>
                         </ul>
-                        <p class="u-text u-text-6">For spotting fake news among the real news, We provided a dataset
-                            contains 15,636 FAKE and REAL sentences about COVID-19. We divided each paragraph in our
-                            Claims dataset into sentences using the Spacy library and remove pointless and meaningless
-                            sentences Manually.</p>
+                        <p class="u-text u-text-6">For spotting misinformation among facts, We provided a dataset
+                            contains 15,636 FAKE and REAL sentences about COVID-19. This dataset was developed by
+                            dividing each paragraph in our Claims dataset into sentences using the sentence segmentation
+                            in the Spacy library and removing pointless and meaningless sentences Manually.</p>
                         <a href="https://docs.google.com/spreadsheets/d/17iCCcOq1QfrfDJ0bJF0RLe4vhC5uytOBSL426Tm_v00/edit?usp=sharing"
                            class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-2"
                            target="_blank">Access the dataset</a>
@@ -325,7 +323,7 @@
                         <div class="u-border-3 u-border-grey-dark-1 u-expanded-width u-line u-line-horizontal u-line-3"></div>
                         <ul class="u-text u-text-8">
                             <li style="">
-                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Tweets</span>
+                                <span style="font-weight: 700;">Checkovid_Tweets</span>
                             </li>
                         </ul>
                         <p class="u-text u-text-9">This dataset contains all of the tweets' information that is
@@ -335,7 +333,7 @@
                            target="_blank">Access the dataset</a>
                         <ul class="u-text u-text-10">
                             <li style="">
-                                <span style="font-weight: 700;">Checkovid - Covid19 Fake Users</span>
+                                <span style="font-weight: 700;">Checkovid_Users</span>
                             </li>
                         </ul>
                         <p class="u-text u-text-11">This dataset contains all of the users' information that is
@@ -345,14 +343,13 @@
                            target="_blank">Access the dataset</a>
                         <ul class="u-text u-text-12">
                             <li style="">
-                                <span style="font-weight: 700;">Checkovid - Covid19 Fake News in Twitter</span>
+                                <span style="font-weight: 700;">Checkovid_Twitter</span>
                             </li>
                         </ul>
-                        <p class="u-text u-text-13">We extracted 42 features from the above two datasets that show
-                            different information about REAL and FAKE tweets and Twitter users, such as retweet count,
-                            date, text stop words percent. This dataset contains 18,000 tweets and users' information
-                            extracted from the Twitter api API created based on its text and users' engagement.</p>
-                        <a href="https://docs.google.com/spreadsheets/d/1U2k4IZkdtllsABaAUx0lcv3kXZEVCzZw_F8Gizol1H0/edit?usp=sharing"
+                        <p class="u-text u-text-13">We extracted 43 features from the two above datasets that contain
+                            different tweet characteristics and user engagements, such as linguistic features and social
+                            context features.</p>
+                        <a href="https://docs.google.com/spreadsheets/d/1pV6oMV1QT4DawpyULnoMwetm4o3-EAD9eY5nBrtxhMQ/edit?usp=sharing"
                            class="u-active-none u-border-2 u-border-custom-color-5 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-5"
                            target="_blank">Access the dataset</a>
                     </div>
@@ -433,16 +430,16 @@
     </span>
 
 
-<script>
-
-    var preloader = document.getElementById('loading');
-
-    function preload_function() {
-        preloader.style.display = 'none'
-    }
-
-
-</script>
+{#<script>#}
+{##}
+{#    var preloader = document.getElementById('loading');#}
+{##}
+{#    function preload_function() {#}
+{#        preloader.style.display = 'none'#}
+{#    }#}
+{##}
+{##}
+{#</script>#}
 
 </body>
 </html>
