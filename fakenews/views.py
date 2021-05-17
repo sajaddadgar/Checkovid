@@ -6,7 +6,7 @@ from .apps import FakenewsConfig
 import os
 import pickle
 from .utils import get_all_verdict, final_verdict, get_sentence_verdict, extract_tweets_feature, netword_predict, \
-    get_vector, get_top_5_similar, top5_similarities
+    get_vector, get_top_5_similar, top5_similarities, save_db
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -63,6 +63,11 @@ def claim(request):
 
 def sentence(request):
     text = str(request.POST.get('text'))
+
+    user_comment = str(request.POST.get('user_comment'))
+    sentence_verdict = str(request.POST.get('sentence_verdict'))
+    sentence_text = str(request.POST.get('sentence_text'))
+
     selected_model = str(request.POST.get('selected_model'))
 
     if (text != 'None') and (text != ''):
@@ -79,6 +84,9 @@ def sentence(request):
         stuff = {
             'show_verdict': False
         }
+
+    if (user_comment != 'None') and (user_comment != ''):
+        save_db(sentence_text, sentence_verdict, user_comment)
 
     return render(request, 'Page-2.html', stuff)
 

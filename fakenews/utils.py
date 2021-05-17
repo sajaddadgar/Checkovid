@@ -516,6 +516,10 @@ def netword_predict(tweet_info, text):
         label = 'false'
     return network_prediction, text_prediction, label
 
+def save_db(sentence_text, sentence_verdict, user_comment):
+    with open('./data/comments.csv', 'a') as f:
+        f.write(','.join([sentence_text, sentence_verdict, user_comment]) + '\n')
+
 
 class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
