@@ -156,6 +156,11 @@ def get_verdict_with_token2id(model, token2id, input_text, maxlen):
 
 
 def get_all_verdict(text):
+
+    lang = translator.detect(text)[0]
+    if lang != 'en':
+        text = translator.translate(text, lang_tgt='en')
+
     models = FakenewsConfig.paragraph_base_model_dict
     tfidfvectorizer = FakenewsConfig.paragraph_base_tfidfvectorizer
     tokenizer = FakenewsConfig.paragraph_base_tokenizer
@@ -277,6 +282,10 @@ def get_sentence_verdict(text, selected_model):
         'Convolutional Neural Networks (CNN)': 'cnn',
         'CNN + LSTM': 'cnn_lstm'
     }
+
+    lang = translator.detect(text)[0]
+    if lang != 'en':
+        text = translator.translate(text, lang_tgt='en')
 
     doc = nlp(text)
     sentence = [str(sent).strip() for sent in doc.sents]
@@ -569,6 +578,11 @@ def get_top_5_similar(document):
 
 
 def top5_similarities(text):
+
+    lang = translator.detect(text)[0]
+    if lang != 'en':
+        text = translator.translate(text, lang_tgt='en')
+
     X = FakenewsConfig.similarity
     X2 = np.append(X, [text])
 
