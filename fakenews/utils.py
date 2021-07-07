@@ -4,7 +4,8 @@ from datetime import datetime
 import numpy as np
 import heapq
 import textstat
-from google_trans_new import google_translator
+# from google_trans_new import google_translator
+from .google_trans import google_translator
 import operator
 from fakenews.models import Claim
 from .twitter import get_tweets_by_id, get_user_by_id
